@@ -35,7 +35,7 @@ echo 'Setting up hostname'
 echo 'arch-virtualbox' > /etc/hostname
 
 # disable pacman download timeout because of weird cooperate firewall settings
-sed '/\[options\]/a DisableDownloadTimeout' /etc/pacman.conf
+sed -i '/\[options\]/a DisableDownloadTimeout' /etc/pacman.conf
 
 # build
 # echo 'Building'

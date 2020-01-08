@@ -41,7 +41,7 @@ swapon /dev/sda2
 mount /dev/sda1 /mnt
 
 # disable pacman download timeout because of weird cooperate firewall settings
-sed '/\[options\]/a DisableDownloadTimeout' /etc/pacman.conf
+sed -i '/\[options\]/a DisableDownloadTimeout' /etc/pacman.conf
 
 # pacstrap
 pacstrap /mnt base
