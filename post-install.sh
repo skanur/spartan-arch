@@ -18,9 +18,9 @@ echo 'exec nitrogen --restore &' >> ~/.xinitrc
 echo 'exec emacs' >> ~/.xinitrc
 
 # emacs config
-git clone https://sudgithub.com/abrochard/emacs-config.git
-echo '(load-file "~/emacs-config/bootstrap.el")' > ~/.emacs
-echo '(server-start)' >> ~/.emacs
+git https://github.com/quantorenlogik/.emacs.d
+# echo '(load-file "~/emacs-config/bootstrap.el")' > ~/.emacs
+# echo '(server-start)' >> ~/.emacs
 
 # pacaur
 mkdir Downloads
