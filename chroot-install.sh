@@ -21,14 +21,19 @@ fi
 echo 'Setting up timezone'
 timedatectl set-ntp true
 ln -s /usr/share/zoneinfo/America/New_York /etc/localtime
-timedatectl set-timezone America/New_York
+ln -sf /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 hwclock --systohc
+
+# setup keymaps and font
+echo 'Setting up german keymap'
+echo KEYMAP=de-latin1 > /etc/vconsole.conf
+echo FONT=lat9w-16 >> /etc/vconsole.conf
 
 # setup locale
 echo 'Setting up locale'
-sed -i 's/^#en_US.UTF-8/en_US.UTF-8/' /etc/locale.gen
+sed -i 's/^#de_DE.UTF-8/de_DE.UTF-8/' /etc/locale.gen
 locale-gen
-echo 'LANG=en_US.UTF-8' > /etc/locale.conf
+echo 'LANG=de_DE.UTF-8' > /etc/locale.conf
 
 # setup hostname
 echo 'Setting up hostname'
@@ -61,10 +66,9 @@ echo 'vboxsf' > /etc/modules-load.d/vboxsf.conf
 # install dev envt.
 echo 'Installing dev environment'
 pacman -S --noconfirm git emacs zsh nodejs npm vim wget perl make gcc grep tmux i3 dmenu
-pacman -S --noconfirm chromium curl autojump openssh sudo mlocate the_silver_searcher
+pacman -S --noconfirm chromium curl openssh sudo mlocate
 pacman -S --noconfirm ttf-hack lxterminal nitrogen ntp dhclient keychain
-pacman -S --noconfirm python-pip go go-tools pkg-config
-npm install -g jscs jshint bower grunt
+pacman -S --noconfirm python python-pip pkg-config
 pip install pipenv bpython ipython
 
 # install req for pacaur & cower
