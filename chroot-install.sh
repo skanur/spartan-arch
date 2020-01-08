@@ -34,9 +34,12 @@ echo 'LANG=en_US.UTF-8' > /etc/locale.conf
 echo 'Setting up hostname'
 echo 'arch-virtualbox' > /etc/hostname
 
+# disable pacman download timeout because of weird cooperate firewall settings
+sed '/\[options\]/a DisableDownloadTimeout' /etc/pacman.conf
+
 # build
-echo 'Building'
-mkinitcpio -p linux
+# echo 'Building'
+# mkinitcpio -p linux
 
 # install bootloader
 echo 'Installing bootloader'
@@ -86,7 +89,7 @@ echo '%wheel ALL=(ALL) ALL' >> /etc/sudoers
 systemctl enable ntpdate.service
 
 # preparing post install
-wget https://raw.githubusercontent.com/abrochard/spartan-arch/master/post-install.sh -O /home/$user/post-install.sh
+wget https://raw.githubusercontent.com/quantorenlogik/spartan-arch/master/post-install.sh -O /home/$user/post-install.sh
 chown $user:$user /home/$user/post-install.sh
 
 echo 'Done'
