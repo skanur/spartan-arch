@@ -18,7 +18,7 @@ echo 'exec nitrogen --restore &' >> ~/.xinitrc
 echo 'exec emacs' >> ~/.xinitrc
 
 # emacs config
-git https://github.com/quantorenlogik/.emacs.d
+git clone https://github.com/quantorenlogik/.emacs.d
 # echo '(load-file "~/emacs-config/bootstrap.el")' > ~/.emacs
 # echo '(server-start)' >> ~/.emacs
 
@@ -30,7 +30,7 @@ tar -xvf pacaur.tar.gz
 cd pacaur
 makepkg PKGBUILD
 read -t 1 -n 1000000 discard      # discard previous input
-sudo pacman -U pacaur-*.pkg.tar.xz --noconfirm
+sudo pacman -U pacaur*.pkg.tar.xz --noconfirm
 
 # xterm setup
 echo 'XTerm*background:black' > ~/.Xdefaults

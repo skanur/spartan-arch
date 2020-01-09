@@ -49,7 +49,7 @@ sed -i '/\[options\]/a DisableDownloadTimeout' /etc/pacman.conf
 # install bootloader
 echo 'Installing bootloader'
 pacman -S syslinux --noconfirm
-sed -i 's/APPEND root=\/dev\/sda3 ro/APPEND root=\/dev\/sda1 rw/g' /boot/syslinux/syslinux.cfg
+sed -i 's/APPEND root=\/dev\/sda3 rw/APPEND root=\/dev\/sda1 rw/g' /boot/syslinux/syslinux.cfg
 syslinux-install_update -iam
 
 # install Xorg
@@ -97,3 +97,4 @@ wget https://raw.githubusercontent.com/quantorenlogik/spartan-arch/master/post-i
 chown $user:$user /home/$user/post-install.sh
 
 echo 'Done'
+startx
