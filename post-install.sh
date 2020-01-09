@@ -96,11 +96,5 @@ echo "file=/home/$(whoami)/Pictures/wallpaper.png" >> bg-saved.cfg
 echo 'mode=0' >> bg-saved.cfg
 echo 'bgcolor=#000000' >> bg-saved.cfg
 
-# temporary workaround
-cd
-wget https://raw.githubusercontent.com/abrochard/spartan-arch/master/startx.sh -O startx.sh
-chmod +x startx.sh
-echo 'alias startx=~/startx.sh' >> ~/.zshrc
-
 echo 'Done'
 ~/startx.sh
