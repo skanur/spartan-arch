@@ -87,7 +87,7 @@ fi
 cd
 mkdir Pictures
 cd Pictures
-wget http://static.simpledesktops.com/uploads/desktops/2019/06/15/CMYK_1.png -O wallpaper.png
+wget https://raw.githubusercontent.com/quantorenlogik/spartan-arch/master/arch_wallpaper.png -O wallpaper.png
 cd ~/.config/
 mkdir nitrogen
 cd nitrogen
