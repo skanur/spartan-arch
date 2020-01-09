@@ -48,9 +48,9 @@ sed -i '/\[options\]/a DisableDownloadTimeout' /etc/pacman.conf
 
 # install bootloader
 echo 'Installing bootloader'
-pacman -S grub --noconfirm
-grub-install --target=i386-pc /dev/sda
-grub-mkconfig -o /boot/grub/grub.cfg
+pacman -S syslinux --noconfirm
+sed -i 's/APPEND root=\/dev\/sda3 ro/APPEND root=\/dev\/sda1 rw/g' /boot/syslinux/syslinux.cfg
+syslinux-install_update -iam
 
 # install Xorg
 echo 'Installing Xorg'
