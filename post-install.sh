@@ -18,7 +18,7 @@ echo 'exec nitrogen --restore &' >> ~/.xinitrc
 echo 'exec emacs' >> ~/.xinitrc
 
 # emacs config
-git clone https://github.com/quantorenlogik/.emacs.d
+# git clone https://github.com/quantorenlogik/.emacs.d
 # echo '(load-file "~/emacs-config/bootstrap.el")' > ~/.emacs
 # echo '(server-start)' >> ~/.emacs
 
@@ -39,12 +39,12 @@ echo 'UXTerm*background:black' >> ~/.Xdefaults
 echo 'UXTerm*foreground:white' >> ~/.Xdefaults
 
 # tmux setup like emacs
-cd
-echo 'unbind C-b' > ~/.tmux.conf
-echo 'set -g prefix C-x' >> ~/.tmux.conf
-echo 'bind C-x send-prefix' >> ~/.tmux.conf
-echo 'bind 2 split-window' >> ~/.tmux.conf
-echo 'bind 3 split-window -h' >> ~/.tmux.conf
+#cd
+#echo 'unbind C-b' > ~/.tmux.conf
+#echo 'set -g prefix C-x' >> ~/.tmux.conf
+#echo 'bind C-x send-prefix' >> ~/.tmux.conf
+#echo 'bind 2 split-window' >> ~/.tmux.conf
+#echo 'bind 3 split-window -h' >> ~/.tmux.conf
 
 # oh-my-zsh
 cd
@@ -87,7 +87,7 @@ fi
 cd
 mkdir Pictures
 cd Pictures
-wget https://raw.githubusercontent.com/quantorenlogik/spartan-arch/master/arch_wallpaper.png -O wallpaper.png
+wget https://raw.githubusercontent.com/skanur/spartan-arch/master/arch_wallpaper.png -O wallpaper.png
 cd ~/.config/
 mkdir nitrogen
 cd nitrogen
@@ -95,6 +95,12 @@ echo '[xin_-1]' > bg-saved.cfg
 echo "file=/home/$(whoami)/Pictures/wallpaper.png" >> bg-saved.cfg
 echo 'mode=0' >> bg-saved.cfg
 echo 'bgcolor=#000000' >> bg-saved.cfg
+
+# doom-emacs
+sudo pacman -S ripgrep fd
+git clone https://github.com/hlissner/doom-emacs ~/.emacs.d
+~/.emcas.d/bin/doom install
+~/.emacs.d/bin/doom sync
 
 echo 'Done'
 ~/startx.sh
