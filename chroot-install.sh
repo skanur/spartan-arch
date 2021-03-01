@@ -23,7 +23,7 @@ fi
 echo 'Setting up timezone'
 timedatectl set-ntp true
 ln -s /usr/share/zoneinfo/America/New_York /etc/localtime
-ln -sf /usr/share/zoneinfo/Europe/Berlin /etc/localtime
+ln -sf /usr/share/zoneinfo/Europe/Helsinki /etc/localtime
 hwclock --systohc
 
 # setup keymaps and font
@@ -95,7 +95,7 @@ echo '%wheel ALL=(ALL) ALL' >> /etc/sudoers
 systemctl enable ntpdate.service
 
 # preparing post install
-wget https://raw.githubusercontent.com/quantorenlogik/spartan-arch/master/post-install.sh -O /home/$user/post-install.sh
+wget https://raw.githubusercontent.com/skanur/spartan-arch/master/post-install.sh -O /home/$user/post-install.sh
 chown $user:$user /home/$user/post-install.sh
 
 echo 'Done'
