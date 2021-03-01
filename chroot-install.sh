@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e 
+
 # This will be ran from the chrooted env.
 
 user=$1
@@ -25,15 +27,15 @@ ln -sf /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 hwclock --systohc
 
 # setup keymaps and font
-echo 'Setting up german keymap'
-echo KEYMAP=de-latin1 > /etc/vconsole.conf
-echo FONT=lat9w-16 >> /etc/vconsole.conf
+#echo 'Setting up german keymap'
+#echo KEYMAP=de-latin1 > /etc/vconsole.conf
+#echo FONT=lat9w-16 >> /etc/vconsole.conf
 
 # setup locale
 echo 'Setting up locale'
-sed -i 's/^#de_DE.UTF-8/de_DE.UTF-8/' /etc/locale.gen
+sed -i 's/^#en_US.UTF-8/en_US.UTF-8/' /etc/locale.gen
 locale-gen
-echo 'LANG=de_DE.UTF-8' > /etc/locale.conf
+echo 'LANG=en_US.UTF-8' > /etc/locale.conf
 
 # setup hostname
 echo 'Setting up hostname'
