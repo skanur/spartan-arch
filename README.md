@@ -2,7 +2,7 @@
 
 This is a set of scripts designed to automate the creation of a minimal VM running Arch Linux, i3 as a Windows manager and my own Emacs (evil) configuration. This VM can be used as a file editor for the  host via folder sharing and as a development environment. Currently, the VM costs about 90MB of RAM to run.#
 
-This is forked from [Adrien Brochard](https://github.com/abrochard/spartan-arch), showcasing his project in this [video](https://www.youtube.com/watch?v=RDrG-_kapaQ). I've adapted most of his project, altough swapping out the bootloader, ~adding some personal preferences and optimizing the mirrorlist for german servers~. Cheers to Adrien!
+This is forked from [quantorenlogik](https://github.com/quantorenlogik/spartan-arch), showcasing his project in this [video](https://www.youtube.com/watch?v=RDrG-_kapaQ). I've adapted most of his project, altough swapping out the bootloader, ~adding some personal preferences and optimizing the mirrorlist for german servers~. Cheers to Adrien & quantorenlogik!
 
 ## Requirements for Virtual Box VM
 - 8GB of space on disk
